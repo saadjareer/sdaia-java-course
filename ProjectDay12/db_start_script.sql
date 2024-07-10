@@ -24,7 +24,7 @@ CREATE TABLE CONSULTATIONS (
     doctor_id INTEGER NOT NULL,
     patient_id INTEGER NOT NULL,
     request_time DATETIME NOT NULL,
-    consultation_time DATETIME NOT NULL,
+    consultation_time DATETIME,
     status TEXT NOT NULL,
     diagnosis TEXT,
     FOREIGN KEY (doctor_id) REFERENCES DOCTORS(id),
@@ -41,11 +41,11 @@ CREATE TABLE SCHEDULES (
     FOREIGN KEY (doctor_id) REFERENCES DOCTORS(id)
 );
 
--- Create MEDICAL_REPORTS table
-CREATE TABLE MEDICAL_REPORTS (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    patient_id INTEGER NOT NULL,
-    details TEXT NOT NULL,
-    report_date DATETIME NOT NULL,
-    FOREIGN KEY (patient_id) REFERENCES PATIENTS(id)
-);
+-- -- Create MEDICAL_REPORTS table
+-- CREATE TABLE MEDICAL_REPORTS (
+--     id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     patient_id INTEGER NOT NULL,
+--     details TEXT NOT NULL,
+--     report_date DATETIME NOT NULL,
+--     FOREIGN KEY (patient_id) REFERENCES PATIENTS(id)
+-- );
